@@ -1,0 +1,434 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+}
+
+nav {
+    background: #333;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f4c542;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background-image.jpg') center/cover;
+    position: relative;
+    color: white;
+    padding-top: 80px; /* Space for the fixed navbar */
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    animation: slideDown 1.5s ease forwards;
+    opacity: 0;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+.hero .btn {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: #f4c542;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+    display: inline-block;
+    animation: fadeIn 2.5s ease forwards;
+    opacity: 0;
+}
+
+.hero .btn:hover {
+    background: #333;
+    color: #f4c542;
+}
+
+.hero-image img {
+    max-width: 400px;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 50px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-item {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.logo-img {
+    max-width: 70px; /* Atur lebar maksimum logo */
+    height: auto;     /* Biarkan gambar menyesuaikan proporsi aslinya */
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://cdn.pixabay.com/photo/2016/11/18/22/31/architecture-1837176_1280.jpg') center/cover no-repeat;
+    position: relative;
+    color: white;
+    padding-top: 80px; /* Space for the fixed navbar */
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px; /* Tambahkan padding untuk ruang */
+}
+
+#about {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+    color: #333;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-item {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-item i {
+    font-size: 40px;
+    color: #f4c542;
+    margin-bottom: 20px;
+}
+
+.about-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-item p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr; /* Pada perangkat kecil, susunan grid akan berubah menjadi kolom tunggal */
+    }
+}
+
+#articles {
+    background-color: #fff;
+    padding: 60px 0;
+    color: #333;
+}
+
+#articles h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.article-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.article-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.article-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.article-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.article-item p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.article-item .btn {
+    padding: 10px 20px;
+    background-color: #f4c542;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.article-item .btn:hover {
+    background-color: #333;
+    color: #f4c542;
+}
+
+@media (max-width: 768px) {
+    .article-grid {
+        grid-template-columns: 1fr; /* Pada layar kecil, artikel diatur dalam satu kolom */
+    }
+}
+
+#report {
+    background-color: #333;
+    color: white;
+    padding: 60px 0;
+}
+
+#report h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #f4c542;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#report p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-size: 18px;
+    color: #ddd;
+}
+
+.report-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #444;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #f4c542;
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #ccc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border: 2px solid #f4c542;
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+}
+
+.btn {
+    padding: 12px 30px;
+    background-color: #f4c542;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 30px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    #report h2 {
+        font-size: 28px;
+    }
+
+    .report-form {
+        padding: 20px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}
