@@ -11,7 +11,6 @@ function App() {
     Lokasi: '',
     DetailKerusakan: '',
   });
-  
   const [gambar, setGambar] = useState(null);
   const [error, setError] = useState(null);
 
@@ -79,18 +78,107 @@ function App() {
 
   return (
     <div>
-      <h1>Form Laporan Infrastruktur</h1>
-      
-      {/* Form input */}
-      <form onSubmit={handleSubmit}>
-        <input name="Nama" value={newForm.Nama} onChange={handleChange} placeholder="Nama" required />
-        <input name="Tanggal" value={newForm.Tanggal} onChange={handleChange} placeholder="Tanggal" required type="date" />
-        <input name="Kategori" value={newForm.Kategori} onChange={handleChange} placeholder="Kategori" required />
-        <input name="Lokasi" value={newForm.Lokasi} onChange={handleChange} placeholder="Lokasi" required />
-        <input name="DetailKerusakan" value={newForm.DetailKerusakan} onChange={handleChange} placeholder="Detail Kerusakan" required />
-        <input type="file" onChange={handleFileChange} required />
-        <button type="submit">Kirim</button>
-      </form>
+      {/* Navbar Section */}
+      <nav>
+        <div className="logo">
+          <a href="#">
+            <img src="GOLDEN_HOUR.png" alt="Logo" className="logo-img" />
+          </a>
+        </div>
+        <ul>
+          <li><a href="#">Beranda</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#report">Laporan Pengaduan</a></li>
+        </ul>
+      </nav>    
+
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Innovative Infrastructure Solutions</h1>
+          <p>Building a better future, one project at a time.</p>
+          <a href="#services" className="btn">Discover More</a>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services">
+        <div className="container">
+          <h2>Our Services</h2>
+          <div className="service-grid">
+            <div className="service-item">
+              <h3>Consulting</h3>
+              <p>Expert consultation on infrastructure development.</p>
+            </div>
+            <div className="service-item">
+              <h3>Planning</h3>
+              <p>Professional planning for sustainable projects.</p>
+            </div>
+            <div className="service-item">
+              <h3>Construction</h3>
+              <p>Reliable and efficient construction services.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about">
+        <div className="container">
+          <h2>Tentang Kami</h2>
+          <div className="about-grid">
+            <div className="about-item">
+              <i className="fas fa-building"></i>
+              <h3>Siapa Kami</h3>
+              <p>Website pengaduan infrastruktur untuk melaporkan setiap kerusakan fasilitas umum di wilayah Jawa Timur. Laporan pengaduan akan diproses dalam waktu kurang dari 24 jam.</p>
+            </div>
+            <div className="about-item">
+              <i className="fas fa-bullseye"></i>
+              <h3>Visi</h3>
+              <p>Menjadi pemimpin dalam industri infrastruktur dengan komitmen terhadap kualitas, keselamatan, dan keberlanjutan.</p>
+            </div>
+            <div className="about-item">
+              <i className="fas fa-handshake"></i>
+              <h3>Misi</h3>
+              <p>Membangun kemitraan jangka panjang dengan klien melalui layanan andal dan solusi yang disesuaikan.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Laporan Pengaduan */}
+      <section id="report">
+        <div className="container">
+          <h2>Laporan Pengaduan</h2>
+          <form onSubmit={handleSubmit} className="report-form">
+            <div className="form-group">
+              <label htmlFor="name">Nama Anda:</label>
+              <input name="Nama" value={newForm.Nama} onChange={handleChange} placeholder="Nama lengkap Anda" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="tanggal">Tanggal:</label>
+              <input name="Tanggal" value={newForm.Tanggal} onChange={handleChange} placeholder="Masukkan tanggal" required type="date" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="kategori">Kategori:</label>
+              <textarea name="Kategori" value={newForm.Kategori} onChange={handleChange} placeholder="Masukan kategori" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="lokasi">Lokasi:</label>
+              <textarea name="Lokasi" value={newForm.Lokasi} onChange={handleChange} placeholder="Masukan lokasi kerusakan" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="issue">Detail Kerusakan:</label>
+              <textarea name="DetailKerusakan" value={newForm.DetailKerusakan} onChange={handleChange} rows="5" placeholder="Jelaskan masalah yang Anda temui" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="file">Unggah Gambar (opsional):</label>
+              <input type="file" onChange={handleFileChange} />
+            </div>
+            <button type="submit" className="btn">Kirim Laporan</button>
+          </form>
+        </div>
+      </section>
 
       {error && <p>Error: {error}</p>}
       {!formlaporan.length ? (
@@ -107,6 +195,10 @@ function App() {
           </div>
         ))
       )}
+
+      <footer>
+        <p>&copy; 2024 Modern Infrastructure. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

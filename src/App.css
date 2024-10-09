@@ -1,42 +1,299 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+}
+
+nav {
+  background: #333;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f4c542;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('https://cdn.pixabay.com/photo/2016/11/18/22/31/architecture-1837176_1280.jpg') center/cover no-repeat;
+  position: relative;
+  color: white;
+  padding-top: 80px;
+}
+
+.hero-content {
   text-align: center;
+  max-width: 600px;
+  padding: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.hero h1 {
+  font-size: 48px;
+  animation: slideDown 1.5s ease forwards;
+  opacity: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.hero p {
+  font-size: 24px;
+  margin-top: 20px;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+.hero .btn {
+  margin-top: 30px;
+  padding: 12px 30px;
+  background: #f4c542;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+  display: inline-block;
+  animation: fadeIn 2.5s ease forwards;
+  opacity: 0;
+}
+
+.hero .btn:hover {
+  background: #333;
+  color: #f4c542;
+}
+
+.hero-image img {
+  max-width: 400px;
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes slideDown {
+  0% {
+      transform: translateY(-100px);
+      opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+      transform: translateY(0);
+      opacity: 1;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
   }
 }
 
-.card {
-  padding: 2em;
+@keyframes floatImage {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
 }
 
-.read-the-docs {
-  color: #888;
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-item {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.logo-img {
+  max-width: 70px;
+  height: auto;
+}
+
+#about {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+  color: #333;
+}
+
+#about h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-item {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#report {
+  background-color: #333;
+  color: white;
+  padding: 60px 0;
+}
+
+#report h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 36px;
+  color: #f4c542;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#report p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  font-size: 18px;
+  color: #ddd;
+}
+
+.report-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #444;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  color: #f4c542;
+  margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #555;
+  color: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border: 2px solid #f4c542;
+}
+
+.form-group input[type="file"] {
+  padding: 5px;
+}
+
+.btn {
+  padding: 12px 30px;
+  background-color: #f4c542;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 30px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .about-grid, .article-grid {
+      grid-template-columns: 1fr;
+  }
 }
